@@ -1,0 +1,22 @@
+#Time COmplexity - O(n)
+#Space Complexity - O(1)
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : No
+
+# Your code here along with comments explaining your approach:Checking the list with index numbers
+#changing that specific number to a negative number. Check the positive elements and return index+1
+class Solution:
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        a=[]
+        for i in range(len(nums)):
+            if nums[abs(nums[i])-1] > 0:
+                nums[abs(nums[i])-1]=-1*nums[abs(nums[i])-1]
+            else:
+                continue
+        for i in range(len(nums)):
+            if nums[i]>0:
+                a.append(i+1)
+        return a
+
+
+        
